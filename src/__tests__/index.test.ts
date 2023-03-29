@@ -1,7 +1,7 @@
 import mocko from '../index';
 
-jest.mock('@faker-js/faker', () => {
-  const originalModule = jest.requireActual('@faker-js/faker');
+jest.mock('@faker-js/faker/locale/en', () => {
+  const originalModule = jest.requireActual('@faker-js/faker/locale/en');
 
   const { faker } = originalModule;
 

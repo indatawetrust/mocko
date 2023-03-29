@@ -43,12 +43,9 @@ mocko({
 
 ```json
 {
-  "phone": "501-955-331",
-  "texts": "Mollitia qui unde ab fugiat blanditiis perspiciatis dolores suscipit voluptatum. Eum nobis totam similique harum commodi. Velit commodi quas aut quaerat blanditiis.
-\nOdit ut doloribus nam aspernatur nostrum alias eum. A quam dolorum repellat labore. Nulla iste nesciunt.
-\nTenetur cumque eius officiis a. Occaecati quo voluptatibus architecto. Eos soluta sapiente dolor sint doloribus molestiae ab quos quisquam. Iure nam dicta nemo.
-\nId nesciunt corrupti alias. Ab blanditiis amet ab modi sunt voluptates ratione. Dolor corrupti inventore minima deserunt cumque expedita cupiditate maiores delectus. Repudiandae quisquam necessitatibus fugit ut neque praesentium. Porro ad excepturi molestias recusandae.
-\nLabore alias tempora nesciunt inventore nemo maiores numquam. Consectetur eum optio suscipit aut neque. Voluptatem commodi tempora. Dolore accusantium perspiciatis accusantium fugit repudiandae."
+  "phone": "501-111-741",
+  "texts": "Ratione animi corrupti deleniti molestias commodi architecto eligendi. Quaerat perspiciatis aliquam velit nostrum aspernatur. Veritatis provident facere nulla tenetur. Voluptates commodi illum laborum.
+\nQuas voluptas commodi commodi quas deleniti quo minima. Voluptatibus quo nulla fugit quam sit. Eaque doloribus iusto minus animi distinctio beatae magni similique. Reiciendis quo a totam veritatis."
 }
 ```
 
@@ -57,8 +54,8 @@ creating arrays
 ```js
 import mocko from 'mocko';
 
-mocko({
-  'genres#5': 'faker.music',
+mocko.default({
+  'genres#5': 'music.genre',
   'colors#3': ['internet.color', 50, 50, 50],
 })
 ```

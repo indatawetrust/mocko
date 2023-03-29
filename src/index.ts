@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker/locale/en';
 import get from 'lodash.get';
 import set from 'lodash.set';
 import unset from 'lodash.unset';
