@@ -54,7 +54,7 @@ creating arrays
 ```js
 import mocko from 'mocko';
 
-mocko.default({
+mocko({
   'genres#5': 'music.genre',
   'colors#3': ['internet.color', 50, 50, 50],
 })
@@ -75,6 +75,16 @@ mocko.default({
     "#744739"
   ]
 }
+```
+
+mocko works in English by default. You can use changeLocale util to change locale.
+
+https://fakerjs.dev/guide/localization.html#available-locales
+
+```js
+import mocko, { changeLocale } from 'mocko';
+
+await changeLocale('tr')
 ```
 
 ## Contributing
