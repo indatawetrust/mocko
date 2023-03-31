@@ -1,4 +1,4 @@
-import mocko from '../index';
+import mocko, { changeLocale } from '../index';
 
 jest.mock('@faker-js/faker/locale/en', () => {
   const originalModule = jest.requireActual('@faker-js/faker/locale/en');
@@ -45,8 +45,26 @@ jest.mock('@faker-js/faker/locale/en', () => {
   };
 });
 
+jest.mock('@faker-js/faker/locale/tr', () => {
+  const originalModule = jest.requireActual('@faker-js/faker/locale/en');
+
+  const { faker } = originalModule;
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    faker: {
+      ...faker,
+      name: {
+        ...faker.name,
+        fullName: jest.fn(() => 'Ahmet Şimşek'),
+      },
+    },
+  };
+});
+
 describe('test', () => {
-  test('should match a valid UUID', () => {
+  test('#1', () => {
     const result = mocko({
       id: 'database.mongodbObjectId',
       ip: 'internet.ip',
@@ -68,6 +86,18 @@ describe('test', () => {
         'https://loremflickr.com/500/500/abstract?lock=81748',
         'https://loremflickr.com/500/500/abstract?lock=63746',
       ],
+    });
+  });
+
+  test('#2', async () => {
+    await changeLocale('tr')
+
+    const result = mocko({
+      name: 'name.fullName',
+    });
+
+    expect(result).toStrictEqual({
+      name: 'Ahmet Şimşek'
     });
   });
 });

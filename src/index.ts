@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker/locale/en';
+import { faker as fakerImport } from '@faker-js/faker/locale/en';
 import get from 'lodash.get';
 import set from 'lodash.set';
 import unset from 'lodash.unset';
@@ -30,6 +30,14 @@ const setData = (data: any, { obj, key, realKey, count }: SetDataOptions) => {
     unset(obj, key);
   }
 };
+
+let faker = fakerImport;
+
+export const changeLocale = (locale: string) => {
+  return import(`@faker-js/faker/locale/${locale}`).then(({ faker: fakerImport }) => {
+    faker = fakerImport
+  })
+}
 
 const mocko = (tempObj: object) => {
   const obj = tempObj;
