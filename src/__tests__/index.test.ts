@@ -90,14 +90,14 @@ describe('test', () => {
   });
 
   test('#2', async () => {
-    await changeLocale('tr')
+    await changeLocale('tr');
 
     const result = mocko({
       name: 'name.fullName',
     });
 
     expect(result).toStrictEqual({
-      name: 'Ahmet Şimşek'
+      name: 'Ahmet Şimşek',
     });
   });
 });

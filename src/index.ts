@@ -35,9 +35,9 @@ let faker = fakerImport;
 
 export const changeLocale = (locale: string) => {
   return import(`@faker-js/faker/locale/${locale}`).then(({ faker: fakerImport }) => {
-    faker = fakerImport
-  })
-}
+    faker = fakerImport;
+  });
+};
 
 const mocko = (tempObj: object) => {
   const obj = tempObj;
