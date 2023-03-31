@@ -1,6 +1,6 @@
 {
   "name": "mocko",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "super simple schema based mock data generator. works integrated with fakerjs.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
